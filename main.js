@@ -5,9 +5,11 @@ let generatedDivs = document.querySelectorAll('#div[id^=div]')
 function createDivisions(rowColumnCount){
     let divsCount = rowColumnCount*rowColumnCount
     for(let i = 1; i<=divsCount; i++){
-       let div = document.createElement("div")
-       div.id = `div${i}`
-       container.appendChild(div)
+       let generatedDiv = document.createElement("div")
+       generatedDiv.id = `div${i}`
+       generatedDiv.style.width = `${eval(480/rowColumnCount)}px`
+       generatedDiv.style.height = `${eval(480/rowColumnCount)}px`
+       container.appendChild(generatedDiv)
     }
 }
 createDivisions(16)
