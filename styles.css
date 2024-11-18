@@ -4,7 +4,21 @@
     box-sizing: border-box;
 }
 
-.container {
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+#container {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+div[id^=div]{
+    background-color: red;
+    min-width: 6%;
+    min-height: 6%;
+    border: 1px solid black; 
 }
