@@ -5,7 +5,6 @@ function createSixteenDivisions(){
        let div = document.createElement("div")
        div.id = `div${i}`
        container.appendChild(div)
-
     }
 }
 createSixteenDivisions()
