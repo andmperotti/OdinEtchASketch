@@ -8,3 +8,10 @@ function createSixteenDivisions(){
     }
 }
 createSixteenDivisions()
+
+container.addEventListener('mouseover', (e)=>{
+    let target = e.target
+    if(target.id!=='container'){
+        target.style.backgroundColor = 'red'
+    }
+})
