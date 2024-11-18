@@ -74,10 +74,10 @@ button {
     display: flex;
     flex-wrap: wrap;
     width: 480px;
+    height: 480px;
+    align-content: flex-start;
 }
 
 div[id^=div]{
     border: 1px solid black; 
-    width: 30px;
-    height: 30px;
 }
