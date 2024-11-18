@@ -1,4 +1,5 @@
 let container = document.querySelector('#container')
+let changeButton = document.querySelector('button')
 
 function createSixteenDivisions(){
     for(let i = 1; i<=256; i++){
@@ -15,3 +16,4 @@ container.addEventListener('mouseover', (e)=>{
         target.style.backgroundColor = 'red'
     }
 })
+
