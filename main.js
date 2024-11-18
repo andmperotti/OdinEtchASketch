@@ -1,8 +1,9 @@
 let container = document.querySelector('#container')
 let changeButton = document.querySelector('button')
+let generatedDivs = document.querySelectorAll('#div[id^=div]')
 
-function createDivisions(divs){
-    for(let i = 1; i<=divs; i++){
+function createDivisions(divCount){
+    for(let i = 1; i<=divCount; i++){
        let div = document.createElement("div")
        div.id = `div${i}`
        container.appendChild(div)
@@ -19,9 +20,8 @@ container.addEventListener('mouseover', (e)=>{
 
 changeButton.addEventListener('click', ()=>{
     let userGridSize = Number(prompt("How many total squares would you like? "))
-    let newDimensions = Math.sqrt(userGridSize)
-    container.style.width= 480/userGridSize
-    container.style.height = 480/userGridSize
-    container.removeChild()
-    
+    while(container.firstChild){
+        container.removeChild(container.firstChild)
+    }
+    createDivisions(userGridSize)
 })
