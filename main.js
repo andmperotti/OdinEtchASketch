@@ -5,19 +5,28 @@ let generatedDivs = document.querySelectorAll('#div[id^=div]')
 function createDivisions(rowColumnCount){
     let divsCount = rowColumnCount*rowColumnCount
     for(let i = 1; i<=divsCount; i++){
-       let generatedDiv = document.createElement("div")
-       generatedDiv.id = `div${i}`
-       generatedDiv.style.width = `${eval(480/rowColumnCount)}px`
-       generatedDiv.style.height = `${eval(480/rowColumnCount)}px`
-       container.appendChild(generatedDiv)
+        let generatedDiv = document.createElement("div")
+        generatedDiv.id = `div${i}`
+        generatedDiv.style.width = `${eval(480/rowColumnCount)}px`
+        generatedDiv.style.height = `${eval(480/rowColumnCount)}px`
+        
+        let red = Math.round(Math.random()*255)
+        let green = Math.round(Math.random()*255)
+        let blue = Math.round(Math.random()*255)
+
+        let randomGeneratedColor = `rgba(${red}, ${blue}, ${green})`
+        generatedDiv.style.backgroundColor = randomGeneratedColor
+        generatedDiv.style.opacity = 0
+
+        container.appendChild(generatedDiv)
     }
 }
 createDivisions(16)
 
 container.addEventListener('mouseover', (e)=>{
-    let target = e.target
-    if(target.id!=='container'){
-        target.style.backgroundColor = 'red'
+    let targetStyle = e.target.style
+    if(e.target.id!=='container'){        
+        targetStyle.opacity = parseFloat(targetStyle.opacity)+0.1
     }
 })
 
