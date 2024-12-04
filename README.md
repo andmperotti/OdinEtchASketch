@@ -1,0 +1,1 @@
+I could have used alpha channel within rgb for the background colors instead of opacity, that would have shown the borders between the cells created, and only influenced their background color with the alpha vs opacity affecting the entire elements viewability persay.
